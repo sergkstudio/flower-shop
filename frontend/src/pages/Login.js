@@ -1,14 +1,23 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Здесь должна быть логика для обработки входа
-    console.log(`Вход для пользователя: ${username}, с паролем: ${password}`);
-    // Например, можно отправить запрос на сервер и сохранить токен в localStorage
+
+    // Имитация проверки логина и пароля
+    if (username === 'admin' && password === 'admin') {
+      // Успешный вход
+      navigate('/'); // Перенаправляем на главную страницу или любую другую
+    } else {
+      // Ошибка входа
+      setError('Неверный логин или пароль');
+    }
   };
 
   return (
@@ -35,6 +44,7 @@ function Login() {
         </div>
         <button type="submit">Войти</button>
       </form>
+      {error && <p style={{ color: 'red' }}>{error}</p>}
     </div>
   );
 }

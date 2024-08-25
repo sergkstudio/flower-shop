@@ -38,5 +38,30 @@ body {
   
   main {
     padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  h2 {
+    color: #444;
+  }
+  
+  .available-flowers,
+  .selected-flowers {
+    margin-bottom: 20px;
+  }
+  
+  button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+  }
+  
+  button:hover {
+    background-color: #45a049;
   }
   
